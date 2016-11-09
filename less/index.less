@@ -1,0 +1,237 @@
+@import "var.less";
+*{
+  box-sizing: border-box;
+}
+body,a,ul,li,img,p,h1,h2,h3,h4,h5,h6{
+  padding:0;margin:0;text-decoration: none;list-style: none;
+}
+.header{
+  width:100%;height:40px;background:#444444;
+}
+.nav_box{
+  height:44px;
+  background:#010101;
+  overflow: hidden;
+  opacity:0.8;
+}
+.clear(){
+  &:before,&:after{
+    content: "";
+    display: block;
+  }
+  &:after{
+    clear:both;
+  }
+}
+.loop(@type:m,@i:1) when (@i<=@cols){
+  .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+  }
+  .loop(@type,@i+1);
+}
+//最小屏
+.loop();
+.col-m-hide{
+  display: block;
+}
+.col-c-hide{
+  display: none;
+}
+.col-l-hide{
+  display: none;
+}
+.nav{
+  width:100%;
+  height:44px;
+  font-size:16px;
+  font-weight:400;
+  line-height:44px;
+  overflow: hidden;
+  font-family: inherit;
+  position: relative;
+  margin:0 auto;
+}
+.nav .nav_first{
+  position:absolute;
+  left:50%;
+}
+.nav .nav_last1{
+  position:absolute;
+  right:10px;
+}
+.nav li{
+  height:100%;
+  float:left;
+  padding:0 10px;
+}
+.nav a{
+  color:#fff;
+}
+.banner{
+  height:540px;
+  overflow: hidden;
+  position:relative;
+}
+.imgs{
+  width:100%;
+  height:100%;
+}
+.imgs a{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.imgs_1{
+  background:url("../img/event_small.jpg") no-repeat 50% 22%;
+  background-size:cover;
+}
+.smallbanner{
+  width:100%;
+  overflow: hidden;
+}
+.smallbanner li{
+  border: 1px solid #fff;
+  float:left;
+  height:200px;
+  .clear();
+}
+.smallbanner li a{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.smimgs1{
+  background:url("../img/nike_watch_small.jpg") no-repeat center center;
+}
+.smimgs2{
+  background:url("../img/airpods_small.jpg") no-repeat center center;
+}
+.smimgs3{
+  background:url("../img/iphone_upgrade_small.jpg") no-repeat center center;
+}
+.smimgs4{
+  background:url("../img/accessibility_small.jpg") no-repeat center center;
+}
+.servicebox{
+  width:100%;
+  overflow: hidden;
+  background:#F2F2F2;
+}
+.service{
+  width:100%;
+  padding:0 22px;
+  margin:0 auto;
+}
+.service p{
+  width:100%;
+  height:20px;
+  padding:16px 0 11px;
+  font-size: 12px;
+  font-weight:700;
+  boder-bottom:1px solid #E3E3E3;
+  color:#999;
+}
+.service_inner{
+  padding-top:20px;
+  overflow: hidden;
+  font-family: inherit;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.service_inner li{
+  width: 100%;height: 38px;
+  font-size: 12px;
+  line-height: 2.78571;
+  font-weight: 400;
+  letter-spacing: normal;
+  border-bottom: 1px solid #c0c6cb;
+}
+.service_inner  h3{
+  color:#333;
+}
+.service_inner ul{
+  display: none;
+}
+//中屏
+@media screen and (min-width: @conWidth){
+  .nav .nav_first{
+    display:none;
+  }
+  .nav li{
+    margin-right:4%;
+  }
+  .imgs_1{
+    background:url("../img/event_medium.jpg") no-repeat 50% 38%;
+    background-size:cover;
+  }
+  .nav .nav_last{
+    margin-right:0;
+  }
+  .nav .nav_last1{
+    display:none;
+  }
+  .smimgs1{
+    background:url("../img/nike_watch_medium.jpg") no-repeat center center;
+  }
+  .smimgs2{
+    background:url("../img/airpods_medium.jpg") no-repeat center center;
+  }
+  .smimgs3{
+    background:url("../img/iphone_upgrade_medium.jpg") no-repeat center center;
+  }
+  .smimgs4{
+    background:url("../img/accessibility_medium.jpg") no-repeat center center;
+  }
+  .loop(c);
+  .col-m-hide{
+    display: block;
+  }
+  .col-c-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+  .service_inner{
+    display: none;
+  }
+}
+//大屏
+@media screen and (min-width: @width){
+  .nav{
+    width:1000px;
+  }
+  .nav li{
+    margin-right:6%;
+  }
+  .imgs_1{
+    background:url("../img/event_large.jpg") no-repeat 50% 38%;
+    background-size:cover;
+  }
+  .smimgs1{
+    background:url("../img/nike_watch_large.jpg") no-repeat center center;
+  }
+  .smimgs2{
+    background:url("../img/airpods_large.jpg") no-repeat center center;
+  }
+  .smimgs3{
+    background:url("../img/iphone_upgrade_large.jpg") no-repeat center center;
+  }
+  .smimgs4{
+    background:url("../img/accessibility_large.jpg") no-repeat center center;
+  }
+  .loop(l);
+  .col-m-hide{
+    display: block;
+  }
+  .col-c-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .service_inner{
+    display: none;
+  }
+}
+
