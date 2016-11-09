@@ -1,7 +1,6 @@
 $(function(){
     var clientW=$(window).width;
     var clientH=$(window).height;
-    alert(clientW);
     $(".son").css({width:clientW,height:clientH});
 
     $(".xz").click(function(){
