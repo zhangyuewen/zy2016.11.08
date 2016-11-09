@@ -26,8 +26,6 @@ h6 {
 .nav_box {
   height: 44px;
   background: #010101;
-  overflow: hidden;
-  opacity: 0.8;
 }
 .col-m-1 {
   width: 5%;
@@ -109,6 +107,42 @@ h6 {
   position: relative;
   margin: 0 auto;
 }
+.nav_box {
+  width: 100%;
+  position: relative;
+}
+.menu {
+  font-size: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  line-height: 40px;
+  height: 44px;
+  width: 44px;
+  margin-left: 5% ;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu_son {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+.menu_son li {
+  margin: auto;
+  width: 80%;
+  height: 50px;
+  font-size: 14px;
+  line-height: 2.78571;
+  font-weight: 400;
+  letter-spacing: normal;
+  border-bottom: 1px solid #c0c6cb;
+}
 .nav .nav_first {
   position: absolute;
   left: 50%;
@@ -126,6 +160,7 @@ h6 {
   color: #fff;
 }
 .banner {
+  width: 100%;
   height: 540px;
   overflow: hidden;
   position: relative;
@@ -133,15 +168,112 @@ h6 {
 .imgs {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .imgs a {
   width: 100%;
   height: 100%;
   display: block;
+  position: absolute;
 }
 .imgs_1 {
-  background: url("../img/event_small.jpg") no-repeat 50% 22%;
+  background: url("../img/event_small.jpg") no-repeat center;
   background-size: cover;
+}
+.imgs_2 {
+  background: #fff url("../img/macbookpro_small.jpg") no-repeat center bottom;
+  background-size: auto;
+  left: 100%;
+}
+.imgs_3 {
+  background: #000 url("../img/iphone_large.jpg") no-repeat center;
+  background-size: contain;
+  left: 100%;
+}
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 5;
+}
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 5;
+}
+.leftBtn {
+  text-align: center;
+  line-height: 65px;
+  font-size: 18px;
+  font-family: "微软雅黑";
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5%;
+  margin: auto;
+  background: #ccc;
+  border-radius: 50%;
+  z-index: 6;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+.left:hover > .leftBtn {
+  opacity: 1;
+}
+.rightBtn {
+  text-align: center;
+  line-height: 65px;
+  font-size: 18px;
+  font-family: "微软雅黑";
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5%;
+  margin: auto;
+  background: #ccc;
+  border-radius: 50%;
+  z-index: 6;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+.right:hover > .rightBtn {
+  opacity: 1;
+}
+.btns {
+  width: 170px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: auto;
+  z-index: 990;
+}
+.btns .btns_list {
+  width: 50px;
+  height: 100%;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  float: left;
+}
+.btns .btns_lists:last-child {
+  margin-right: 0;
+}
+.btns .progress {
+  background: #ccc;
+  width: 0%;
+  height: 100%;
 }
 .smallbanner {
   width: 100%;
@@ -186,6 +318,7 @@ h6 {
   width: 100%;
   padding: 0 22px;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 .service p {
   width: 100%;
@@ -202,6 +335,7 @@ h6 {
   font-family: inherit;
   background: #f2f2f2;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .service_inner li {
   width: 100%;
@@ -218,6 +352,80 @@ h6 {
 .service_inner ul {
   display: none;
 }
+.foot {
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 20px;
+  display: none;
+}
+.footer {
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  width: 100%;
+  height: 240px;
+  margin: 0 auto;
+}
+.footer li {
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 12px;
+  font-family: "微软雅黑";
+}
+.footer li a {
+  float: left;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  height: 20px;
+  text-align: left;
+  color: #848484;
+  text-decoration: none;
+}
+.footer li a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+.footer li h6 {
+  color: #000;
+}
+.line {
+  font-size: 12px;
+  font-family: "微软雅黑";
+}
+.low {
+  width: 100%;
+  height: 40px;
+  margin: auto;
+}
+.low span {
+  color: #99999E;
+  font-size: 12px;
+  font-family: "微软雅黑";
+  text-align: left;
+  line-height: 47px;
+  float: left;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.low a {
+  display: block;
+  float: left;
+  color: #6A7B8D;
+  line-height: 47px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.low a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+.ga {
+  width: 100%;
+  heigth: 10px;
+  display: block;
+}
 @media screen and (min-width: 750px) {
   .nav .nav_first {
     display: none;
@@ -225,9 +433,23 @@ h6 {
   .nav li {
     margin-right: 4%;
   }
+  .menu {
+    display: none;
+  }
+  .menu_son {
+    display: none;
+  }
   .imgs_1 {
-    background: url("../img/event_medium.jpg") no-repeat 50% 38%;
+    background: url("../img/event_medium.jpg") no-repeat center;
     background-size: cover;
+  }
+  .imgs_2 {
+    background: #fff url("../img/macbookpro_medium.jpg") no-repeat center bottom;
+    background-size: contain;
+  }
+  .imgs_3 {
+    background: #000 url("../img/iphone_large.jpg") no-repeat center;
+    background-size: contain;
   }
   .nav .nav_last {
     margin-right: 0;
@@ -319,6 +541,9 @@ h6 {
   .service_inner {
     display: none;
   }
+  .foot {
+    display: block;
+  }
 }
 @media screen and (min-width: 1049px) {
   .nav {
@@ -327,9 +552,23 @@ h6 {
   .nav li {
     margin-right: 6%;
   }
+  .menu {
+    display: none;
+  }
+  .menu_son {
+    display: none;
+  }
   .imgs_1 {
-    background: url("../img/event_large.jpg") no-repeat 50% 38%;
+    background: url("../img/event_large.jpg") no-repeat center;
     background-size: cover;
+  }
+  .imgs_2 {
+    background: #fff url("../img/macbookpro_large.jpg") no-repeat center bottom;
+    background-size: contain;
+  }
+  .imgs_3 {
+    background: #000 url("../img/iphone_large.jpg") no-repeat center;
+    background-size: contain;
   }
   .smimgs1 {
     background: url("../img/nike_watch_large.jpg") no-repeat center center;
@@ -414,5 +653,8 @@ h6 {
   }
   .service_inner {
     display: none;
+  }
+  .foot {
+    display: block;
   }
 }
