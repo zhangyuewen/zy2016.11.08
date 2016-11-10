@@ -1,7 +1,7 @@
 $(function(){
-    var clientW=$(window).width;
-    var clientH=$(window).height;
-    $(".son").css({width:clientW,height:clientH});
+    var clientW=$(window).width();
+    var clientH=$(window).height();
+    $(".menu_son").css({width:clientW,height:clientH});
 
     $(".xz").click(function(){
         $(".xz").next(".son").finish();
@@ -10,7 +10,7 @@ $(function(){
     })
 
     $(".menu").click(function(){
-        $(".menu").next(".menu_son").finish();
+        //$(".menu").next(".menu_son").finish();
         $(".menu").next(".menu_son").slideToggle();
     })
 
@@ -68,17 +68,15 @@ $(function(){
         clearInterval(t2);
 
         /*按钮的变化*/
-        $(".btns-list").find(".progress").css("width", 0);
-        $(".btns-list").eq(next).find(".progress").css({width:"100%"});
+        $(".btns_list").find(".progress").css("width", 0);
+        $(".btns_list").eq(next).find(".progress").css({width:"100%"});
 
         /*轮播图发生变化*/
         if (next > now) {
             $(".pic:eq("+now+")").animate({width: "80%", height: "80%"}).css("zIndex", 0);
 
             $(".pic:eq(" + next + ")").animate({left: 0}, function () {
-                $(".pic:eq(" + now + ")").css({
-                    left: "100%", width: "100%", height: "100%"
-                });
+                $(".pic:eq(" + now + ")").css({left: "100%", width: "100%", height: "100%"});
                 now = next;
             }).css("zIndex", 1)
         } else {
@@ -95,7 +93,7 @@ $(function(){
 
 
     $(".btns_list").click(function(){
-        next=$(this).index(".btns-list");
+        next=$(this).index(".btns_list");
         stop();
     })
 
